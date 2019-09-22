@@ -71,7 +71,7 @@
 #include <rte_udp.h>
 #include <rte_string_fns.h>
 #include <rte_acl.h>
-/* --------------Power Add Start----------------*/
+
 #include <rte_spinlock.h>
 #include <rte_timer.h>
 #include <rte_power.h>
@@ -101,7 +101,7 @@ static uint64_t timerhz;
 #define MAX_ARRIVAL_RATE 14881
 
 static volatile bool force_quit;
-/* --------------Power Add End----------------*/
+
 
 
 #if RTE_LOG_LEVEL >= RTE_LOG_DEBUG
@@ -137,7 +137,7 @@ static volatile bool force_quit;
 /*
  * Configurable number of RX/TX ring descriptors
  */
-//#define RTE_TEST_RX_DESC_DEFAULT 128
+
 #define RTE_TEST_RX_DESC_DEFAULT 512
 #define RTE_TEST_TX_DESC_DEFAULT 512
 static uint16_t nb_rxd = RTE_TEST_RX_DESC_DEFAULT;
@@ -1413,7 +1413,7 @@ struct lcore_conf {
 	struct rte_eth_dev_tx_buffer *tx_buffer[RTE_MAX_ETHPORTS];
 } __rte_cache_aligned;
 
-/* --------------Power Heu Add Start----------------*/
+
 struct lcore_stats {
     double rho;
     uint16_t Nap_Cycles;
@@ -1521,8 +1521,6 @@ power_timer_cb(__attribute__((unused)) struct rte_timer *tim,
     stats[lcore_id].nb_rx_processed = 0;
     stats[lcore_id].nb_idle_looped = 0;
 }
-
-/* --------------Power Heu Add End----------------*/
 
 
 /* Enqueue a single packet, and send burst if queue is filled */
