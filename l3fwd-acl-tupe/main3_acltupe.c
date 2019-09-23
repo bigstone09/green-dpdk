@@ -135,7 +135,6 @@ static volatile bool force_quit;
 /*
  * Configurable number of RX/TX ring descriptors
  */
-//#define RTE_TEST_RX_DESC_DEFAULT 128
 #define RTE_TEST_RX_DESC_DEFAULT 512
 #define RTE_TEST_TX_DESC_DEFAULT 512
 static uint16_t nb_rxd = RTE_TEST_RX_DESC_DEFAULT;
@@ -197,13 +196,6 @@ static struct rte_eth_conf port_conf = {
         .jumbo_frame    = 0, /**< Jumbo Frame Support disabled */
         .hw_strip_crc   = 0, /**< CRC stripped by hardware */
     },
-    /* .rx_adv_conf = { */
-    /* 	.rss_conf = { */
-    /* 		.rss_key = NULL, */
-    /* 		.rss_hf = ETH_RSS_IP | ETH_RSS_UDP | */
-    /*         ETH_RSS_TCP | ETH_RSS_SCTP, */
-    /* 	}, */
-    /* }, */
     .txmode = {
         .mq_mode = ETH_MQ_TX_NONE,
     },
@@ -1384,12 +1376,6 @@ power_timer_cb(__attribute__((unused)) struct rte_timer *tim,
         stats[lcore_id].Nap_Cycles = cycles;
     }
     
-    /* if( rho < ADDJUST_FREQ_THRESHOLD ){ */
-    /*     rte_power_freq_down(lcore_id); */
-    /* }else if( rho > CLIFF ){ */
-    /*     rte_power_freq_up(lcore_id); */
-    /* } */
-
     stats[lcore_id].nb_rx_processed = 0;
     stats[lcore_id].nb_idle_looped = 0;
 }
