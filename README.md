@@ -33,7 +33,7 @@ strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
              --moving_average=Double: param of moving_average to estimatecalu traffic: e_traffic=ma*his_traffic_load +(1-ma)*traffic_load_just_before \
              --config="(port,queue,lcore)[,(port,queue,lcore]]" \
              --scalar: Use scalar function to do lookup
-     ----------------------------------------------------------
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
            -p PORTMASK: hexadecimal bitmask of ports to configure.
            -P : enable promiscuous mode.
            -E : timer num per epoch (timer period = sample_interval/timer_num_per_epoch).
@@ -48,7 +48,7 @@ Term "tupe" stands for "traffic uknown power efficient", so l3fwd-acl-tupe dose 
              --rule_ipv6="FILE_PATH": specify the ipv6 rules entries file\
              --config="(port,queue,lcore)[,(port,queue,lcore]]" \
              --scalar: Use scalar function to do lookup
-    ----------------------------------------------------------
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
              -p PORTMASK: hexadecimal bitmask of ports to configure
              -P : enable promiscuous mode
              -T : timer num per seconds
