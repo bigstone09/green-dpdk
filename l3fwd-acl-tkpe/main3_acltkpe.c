@@ -1786,26 +1786,25 @@ init_lcore_rx_queues(void)
 static void
 print_usage(const char *prgname)
 {
-	printf("%s [EAL options] -- -p PORTMASK -P"
+	printf("%s [EAL options] -- -p PORTMASK -P -E"
            "--"OPTION_RULE_IPV4"=FILE"
            "--"OPTION_RULE_IPV6"=FILE"
            "--"OPTION_TRAFFIC_TABLE"=FILE"
            "--"OPTION_SAMPLE_INTERVAL"=Interger"
            "--"OPTION_AVG_BARRIVAL_SIZE"=Double"
+           "--"OPTION_APP_CYCLES"=Interger"
            "--"OPTION_MA"=Double"
            "  [--"OPTION_CONFIG" (port,queue,lcore)[,(port,queue,lcore]]"
            "  [--"OPTION_ENBJMO" [--max-pkt-len PKTLEN]]\n"
            "  -p PORTMASK: hexadecimal bitmask of ports to configure\n"
            "  -P : enable promiscuous mode\n"
-           /* "  -S : traffic smaple interval\n" */
-           /* "  -B : average batch arrival size\n" */
+           "  -E : timer num per epoch\n"
            "  --"OPTION_CONFIG": (port,queue,lcore): "
            "rx queues configuration\n"
            "  --"OPTION_NONUMA": optional, disable numa awareness\n"
            "  --"OPTION_ENBJMO": enable jumbo frame"
            " which max packet len is PKTLEN in decimal (64-9600)\n"
-           "  --"OPTION_RULE_IPV4"=FILE: specify the ipv4 rules entries "
-           "file. "
+           "  --"OPTION_RULE_IPV4"=FILE: specify the ipv4 rules entries file."
            "Each rule occupy one line. "
            "2 kinds of rules are supported. "
            "One is ACL entry at while line leads with character '%c', "
@@ -1819,6 +1818,7 @@ print_usage(const char *prgname)
            "interval.\n"
            "  --"OPTION_AVG_BARRIVAL_SIZE"=double, average batch arrival size of"
            "traffic, representing the statistical characteristics arrival traffic.\n"
+           "  --"OPTION_APP_CYCLES": per-packet application processing cycles.\n"
            "  --"OPTION_MA": Moving average paramenters.\n"
            "  --"OPTION_SCALAR": Use scalar function to do lookup\n",
            prgname, ACL_LEAD_CHAR, ROUTE_LEAD_CHAR);
