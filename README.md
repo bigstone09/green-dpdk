@@ -8,7 +8,7 @@ The example application we choose is a software router with access control. The 
 Two folds are include in this repo: l3fwd-acl-tkpe and l3fwd-acl-tupe. They respectively show the  power-conserving
 strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
 
-           X. Li, W. Cheng, T. Zhang, J. Xie, F. Ren, and B. Yang. "Power efficient high performance packet I/O". In Proc. ICPP'18. ACM, 2018.
+    X. Li, W. Cheng, T. Zhang, J. Xie, F. Ren, and B. Yang. "Power efficient high performance packet I/O". In Proc. ICPP'18. ACM, 2018.
 
 # Work to do before make and run the program
 1. download and build the dpdk source code (follow the instruction in dpdk mainpage)
@@ -22,7 +22,7 @@ strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
   Term "tkpe" stands for "traffic known power efficient", so l3fwd-acl-tkpe requires historical traffic information to assist in power-conserving decision.
 * usage:
 
-./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -E Timer_Num_Per_Epoch \
+    ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -E Timer_Num_Per_Epoch \
   
            --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
            
@@ -56,7 +56,7 @@ strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
 Term "tupe" stands for "traffic uknown power efficient", so l3fwd-acl-tupe dose not require historical traffic information to assist in power-conserving decision.
 * usage:
 
-./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -T Timer_Num_Per_Second \
+    ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -T Timer_Num_Per_Second \
   
            --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
            
