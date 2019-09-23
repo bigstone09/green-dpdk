@@ -22,33 +22,20 @@ strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
   Term "tkpe" stands for "traffic known power efficient", so l3fwd-acl-tkpe requires historical traffic information to assist in power-conserving decision.
 * usage:
 
-    ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -E Timer_Num_Per_Epoch \
-  
-           --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
-           
-           --rule_ipv6="FILE_PATH": specify the ipv6 rules entries file\
-           
-           --history_traffic="FILE_PATH": specify the historical traffic load entriesfile, 1 double value (in kpps) per-line \
-           
-           --sample_interval=Interger: in Seconds, the traffic sampling interval \
-           
-           --avg_batch_size=Double: average batch size of arrival traffic\
-           
-           --start_epoch=Interger: designate the starting index of history_traffic when starting run the program; It helps determine 'what time it is'.\
-           
-           --app_cycles=Interger: per-packet application processing cycles \
-           
-           --moving_average=Double: param of moving_average to estimatecalu traffic: e_traffic=ma*his_traffic_load +(1-ma)*traffic_load_just_before \
-           
-           --config="(port,queue,lcore)[,(port,queue,lcore]]" \
-           
-           --scalar: Use scalar function to do lookup
-           
-           ----------------------------------------------------------
+        ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -E Timer_Num_Per_Epoch \
+             --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
+             --rule_ipv6="FILE_PATH": specify the ipv6 rules entries file\
+             --history_traffic="FILE_PATH": specify the historical traffic load entriesfile, 1 double value (in kpps) per-line \
+             --sample_interval=Interger: in Seconds, the traffic sampling interval \
+             --avg_batch_size=Double: average batch size of arrival traffic\
+             --start_epoch=Interger: designate the starting index of history_traffic when starting run the program; It helps determine 'what time it is'.\
+             --app_cycles=Interger: per-packet application processing cycles \
+             --moving_average=Double: param of moving_average to estimatecalu traffic: e_traffic=ma*his_traffic_load +(1-ma)*traffic_load_just_before \
+             --config="(port,queue,lcore)[,(port,queue,lcore]]" \
+             --scalar: Use scalar function to do lookup
+ ----------------------------------------------------------
            -p PORTMASK: hexadecimal bitmask of ports to configure.
-           
            -P : enable promiscuous mode.
-           
            -E : timer num per epoch (timer period = sample_interval/timer_num_per_epoch).
            
   
@@ -56,22 +43,15 @@ strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
 Term "tupe" stands for "traffic uknown power efficient", so l3fwd-acl-tupe dose not require historical traffic information to assist in power-conserving decision.
 * usage:
 
-    ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -T Timer_Num_Per_Second \
-  
-           --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
-           
-           --rule_ipv6="FILE_PATH": specify the ipv6 rules entries file\
-                      
-           --config="(port,queue,lcore)[,(port,queue,lcore]]" \
-           
-           --scalar: Use scalar function to do lookup
-           
-           ----------------------------------------------------------
-           -p PORTMASK: hexadecimal bitmask of ports to configure
-           
-           -P : enable promiscuous mode
-           
-           -T : timer num per seconds
+        ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -T Timer_Num_Per_Second \
+             --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
+             --rule_ipv6="FILE_PATH": specify the ipv6 rules entries file\
+             --config="(port,queue,lcore)[,(port,queue,lcore]]" \
+             --scalar: Use scalar function to do lookup
+----------------------------------------------------------
+             -p PORTMASK: hexadecimal bitmask of ports to configure
+             -P : enable promiscuous mode
+             -T : timer num per seconds
 
 # About ACL rules and route entries
 The ipv4 rules file include the ipv4 ACL items and ipv4 route entries, and ipv6 rules file include the ipv6 ACL items and ipv6 route entries.
