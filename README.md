@@ -21,6 +21,7 @@ strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
 # l3fwd-acl-tkpe
   Term "tkpe" stands for "traffic known power efficient", so l3fwd-acl-tkpe requires historical traffic information to assist in power-conserving decision.
 * usage:
+
         ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -E Timer_Num_Per_Epoch \
              --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
              --rule_ipv6="FILE_PATH": specify the ipv6 rules entries file\
@@ -41,6 +42,7 @@ strategies TKPE-DPDK and TUPE-DPDK we proposed in ICPP'18 paper:
 # l3fwd-acl-tupe
 Term "tupe" stands for "traffic uknown power efficient", so l3fwd-acl-tupe dose not require historical traffic information to assist in power-conserving decision.
 * usage:
+
         ./build/l3-acl-tkpe [EAL options] -- -p PORTMASK -P  -T Timer_Num_Per_Second \
              --rule_ipv4="FILE_PATH": specify the ipv4 rules entries file \
              --rule_ipv6="FILE_PATH": specify the ipv6 rules entries file\
